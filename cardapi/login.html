@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" 
+	content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		body,html{
+			margin: 0px;
+			padding: 0px;
+			 font-family: "Microsoft YaHei";
+			 background-color: #D1D1D1;
+			 font-size: 12px;
+		}
+		.head{
+			height:60%;
+			background-color:#fff;
+			position:fixed;
+			bottom:40%;
+			width:100%;
+			background-image: url(imgs/qiangGou.png);
+			background-size: 100% 100%;
+			background-repeat:no-repeat;
+		}
+		.pouch{
+			height:10%;
+			position:fixed;
+			bottom:30%;
+			width:100%;
+			background-repeat:no-repeat;
+			background-color:#FFD064;
+		}
+		.foot{
+			height:30%;
+			background-color:#FFD064;
+			position:fixed;
+			bottom:0%;
+			width:100%;
+			overflow: auto;
+		}
+		table{
+			background-color:#FFD064;
+			width:80%;
+			margin-left: 10%;
+			padding-bottom: 5px;
+			position: absolute;
+			bottom: 0px;
+			border-radius: 30px;
+		}
+		p{
+			font-size: 10px;
+			margin: 0px;
+			margin-left: 10%;
+			width:80%;
+			line-height: 15px;
+		}
+		button{
+			color:#fff;
+			background-color:#EB4E08;
+			border:0px;
+			width:30%;
+			margin-left:35%;
+			height:20px;
+			font-size:12px;
+			border-radius:5px;
+			position:absolute;
+			bottom:25px;
+			position: fixed;
+			bottom: 40%;
+			height: 5%
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="head">
+			&nbsp
+	</div>
+	<img src="">
+	<div class="pouch" style="">
+			<button onclick="jump()" style="">
+				<b>立即抢购</b>
+			</button>
+			<table cellspacing="0px">
+				<tr>
+					<td style="border-bottom:solid 1px #000;width:35%;"></td>
+					<td rowspan="2" style="text-align: center;">活动说明</td>
+					<td style="border-bottom:solid 1px #000;width:35%;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+				</tr>
+			</table>	
+	</div>
+	<div class="foot">
+		<p>1、福利券新老用户同享；</p>
+		<p>2、福利券为居民线下体验福利的入场券，需支付一元才能获得；</p>
+		<p>支付一元完成后，点击微信支付右上角的完成。进入可领取入场券</p>
+		<p style="color:#F00">3、福利券一人只能买一次，多买无效！！！！！；</p>
+		<p>
+			4、居民获取福利券之后方可体验线下1元推拿、1元理发、1元美甲、1元洗衣、1元家政等活动；
+		</p>
+		<p>5、支付后，二维码丢失情况</p>
+		<p style="margin-top:10px;"><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd5ac9358a3855640&redirect_uri=http://admin.shequjia.cn/cardapi/oauth1.php&response_type=code&scope=snsapi_userinfo&state=3d6be0a4035d839573b04816624a415e#wechat_redirect" style="float:right;">找回二维码</a></p>
+		<br/><br/><br/>
+	</div>
+	<img id="qiqiu" src="imgs/qiqiu.png" style="width:30px;height:30px;position:fixed;bottom:40%;left:8%;"/>
+	<img id="cloud" src="imgs/cloud.png" style="width:20px;height:6px;position:fixed;bottom:42%;left:8%;"/>
+	<img id="cloud" src="imgs/cloud.png" style="width:20px;height:6px;position:fixed;bottom:47%;left:14%;"/>
+	<script type="text/javascript">
+		function jump(){
+			window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd5ac9358a3855640&redirect_uri=http://admin.shequjia.cn/cardapi/oauth2.php&response_type=code&scope=snsapi_userinfo&state=3d6be0a4035d839573b04816624a415e#wechat_redirect";
+		}
+		$(
+			function(){
+				fly();
+			}
+		);
+		function fly(){ 
+			$("#qiqiu").animate({bottom:'45%',left:'10%'},2500,
+				function(){
+					var type=Math.random();
+					if(type>0.3){
+						$("#qiqiu").animate({bottom:'41%',left:'10%'},2500,
+						function(){
+						  fly();
+						});
+					}else if(type>0.1){
+						$("#qiqiu").animate({bottom:'41%',left:'0%'},1500,
+						function(){
+						 $("#qiqiu").animate({bottom:'41%',left:'10%'},2700,
+							function(){
+							 fly();
+							});
+						});
+					}else{
+						$("#qiqiu").animate({bottom:'45%',left:'20%'},2700,
+						function(){
+						 $("#qiqiu").animate({bottom:'41%',left:'10%'},1500,
+							function(){
+							 fly();
+							});
+						});
+					}
+				 	
+			});
+		}
+	</script>
+</body>
+</html>
+
+
+

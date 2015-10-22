@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>礼品券</title>
+	<meta name="viewport" 
+	content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		body,html{
+			margin: 0px;
+			padding: 0px;
+			 font-family: "Microsoft YaHei";
+			 background-color: #D1D1D1;
+			 font-size: 12px;
+		}
+		a{
+			text-decoration: none;
+		}
+		.textLine{
+			width:80%;border-bottom:solid 1px #d1d1d1;line-height:30px;margin:0px;margin-left:10%;
+		}
+		.textLine text{
+			width:20%;
+			display:block;
+			float:left;
+		}
+		.onlyText{
+			color:#797979;padding:0px;margin:0px;margin-left:10%;line-height:20px;
+		}
+		select{
+			width:60%;
+			margin-left:10%;
+			border-radius: 6px;
+		}
+	</style>
+	<script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div style="background-color:#FFD064;height:90px;width:100%;line-height:90px;">
+	<text style="color:#fff;margin-left:10%;font-size:14px;">
+		<text style="border-top:solid 1px #fff;border-left:solid 1px #fff;">
+			福
+		</text>
+		利&nbsp集&nbsp市&nbsp入
+		<text style="border-right:solid 1px #fff;border-bottom:solid 1px #fff;">
+			场&nbsp券
+		</text>
+	</text>
+	<img src="imgs/mogu.jpg" style="height:100%;width:25%;float:right;margin-right:5%"/>
+</div>
+<p class="onlyText">抢购信息</p>
+<div style="background-color:#eee;height:31px;line-height:30px;width:100%;">
+	<p class="textLine">
+		<text style="color:#454545;">区域</text>
+		<select id="quYu">
+			<option value='-1'>--请选择--</option>
+			<option value='0'>江干区</option>
+			<option value='1'>下城区</option>
+			<option value='2'>滨江区</option>
+			<option value='3'>拱墅区</option>
+			<option value='4'>西湖区</option>
+		</select>
+	</p>
+</div>
+<div style="background-color:#EBEBEB;height:31px;line-height:30px;">
+	<p class="textLine">
+		<text style="color:#454545;">小区</text>
+		<select id="sheQu">
+		</select>
+	</p>
+</div>
+<p class="onlyText">支付方式</p>
+<div style="background-color:#eee;height:31px;line-height:30px;width:100%;position:relative;">
+	<p class="textLine">
+		<img src="imgs/weichat.jpg" style="width:45px;height:15px;display:inline;position:absolute;top:7px;">
+		<text style="color:#b2b2b2;margin-left:30%;">
+			微信
+		</text>
+	</p>
+</div>
+<button onclick="sure()" style="width:100%;height:40px;background-color:#FFD064;color:#fff;border:0px;position:fixed;bottom:0px;">确定</button>
+<script type="text/javascript">
+	$(
+		function(){
+			var quYus=[
+				{xiaoQus:['--请选择--','高教社区','闻潮社区','大北社区','东湾社区','云水社区','伊萨卡社区','滟澜社区','铭和社区','早城社区','柠檬社区','天仙社区','万家花园社区','红梅社区','三里亭社区','兰苑社区','蓝桥社区','九华社区','红苹果社区','新江花园社区','兴安社区','金海社区','丽江社区','相江社区','天新社区','云峰社区','建华社区','王家井社区','三叉社区','水湘社区','钱塘社区','运新社区','新凯苑社区','健风社区','双菱社区','江汀社区']},
+				{xiaoQus:['--请选择--','打铁关社区','现代城社区','三里家园社区','京都苑社区','流水东苑社区']},
+				{xiaoQus:['--请选择--','西浦社区','白马湖社区','天官社区']},
+				{xiaoQus:['--请选择--','杭钢北苑社区','杭钢南苑社区','东苑第一社区','勤丰社区']},
+				{xiaoQus:['--请选择--','颐兰社区','香樟社区','翰墨香林社区']}
+			];
+			$("#quYu").change(
+				function(){
+					var quYuCode=$("#quYu").val();
+					quYuCode=parseInt(quYuCode);
+					var xiaoQus=quYus[quYuCode].xiaoQus;
+					$('#sheQu').empty();
+					for(var i=0;i<xiaoQus.length;i++){
+						var html='<option value="'+xiaoQus[i]+'">'+xiaoQus[i]+'</option>';
+						$('#sheQu').append(html);
+					}
+				}
+			);
+		}
+	);
+	function sure(){
+		var quYu=$('#quYu>option:selected').text();
+		var sheQu=$('#sheQu').val();
+		if(quYu=="--请选择--"||sheQu=="--请选择--"){
+			alert('请选择区域和小区');
+		}else{
+			window.location.href="http://wx.shequjia.cn/api/ahead.php?money=0.01&body='一元卡券'&store='社区家'&quYu='"+quYu+"'&sheQu='"+sheQu+"'";
+		}
+	}
+</script>
+</body>
+</html>

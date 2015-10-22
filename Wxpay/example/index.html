@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.css"/>
+</head>
+<style type="text/css">
+*{margin:0;padding:0;}
+a{ text-decoration:none;}
+
+#slider{width:100%;height:150px;position:relative; margin:0 auto; background-color:#666;}
+#slider .pics{width:100%;height:150px; list-style:none;}
+#slider .pics li{height:150px; width:100%; float:left}
+#slider img{ width:100%;height:150px; }
+#slider #nav {position:absolute;bottom:5px;right:5px;}
+#slider #nav li.nav{background:#F47500; color:#fff;}
+#slider #nav li{border:1px solid #f47500; color:#d94b01; cursor:pointer;background:#fff;font-size:12px; height:15px;width:15px;float:left;margin-left:4px;display:inline;text-align:center}
+
+#sales{ width:100%; height:180px; margin:20px auto 0;}
+#sales .title{ width:100%; height:30px; background-color:#FFF;}
+#sales span{ color:#900; margin:auto 2px;}
+#sales .box{ width:100%; height:150px; margin:5px auto 0; background-color:#FFF;}
+#sales .box ul{ width:100%; height:150px; list-style:none;}
+#sales .box ul li{ width:33%; height:150px; float:left;}
+#sales .box img{ width:100px; height:100px; display:block; margin:0 auto;}
+#sales .box p{ text-align:center; background-color:#C00; display:block; width:50px; height:20px; margin:10px auto; color:#FFF; cursor:pointer;}
+</style>
+<body>
+
+<div data-role="page" id="home" data-title="社区福利集市">
+
+<div  data-role="content" data-role="page" id="index1">     	
+	    <!--幻灯片-->
+	<div id="slider">
+		<ul class="pics">
+			<li><img alt="" src="images/lanren01.jpg" /></li>
+			<li><img alt="" src="images/lanren02.jpg" /></li>
+			<li><img alt="" src="images/lanren03.jpg" /></li>
+			<li><img alt="" src="images/lanren04.jpg" /></li>
+			<li><img alt="" src="images/lanren05.jpg" /></li>
+		</ul>
+		<ul id="nav">
+			<li onmouseover="setTimeout(function(){lanrenzhijia.slider.pos(0)},300)">1</li>
+			<li onmouseover="setTimeout(function(){lanrenzhijia.slider.pos(1)},300)">2</li>
+			<li onmouseover="setTimeout(function(){lanrenzhijia.slider.pos(2)},300)">3</li>
+			<li onmouseover="setTimeout(function(){lanrenzhijia.slider.pos(3)},300)">4</li>
+			<li onmouseover="setTimeout(function(){lanrenzhijia.slider.pos(4)},300)">5</li>
+		</ul>
+	</div>
+	
+    <!--秒杀-->
+    <div id="sales">
+    	<div class="title">
+        	<div style="margin-left:10px; width:100%;; height:30px;"><div style="width:100%; height:20px; position:absolute; margin:5px auto; border-left:5px solid #900;"><p style="font-size:14px; line-height:20px; padding-left:10px; color:#666;">零元抢购&nbsp;<span>0</span><span>1</span>:<span>2</span><span>5</span>:<span>5</span><span>3</span></p></div></div>
+        </div>
+        <div class="box">
+        	<ul>
+            	<li><img src="images/store-1.jpg" /><p>立即抢</p></li>
+                <li><img src="images/store-2.jpg" /><p>立即抢</p></li>
+                <li><img src="images/store-3.jpg" /><p>立即抢</p></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--公告-->
+    <div id="sales">
+    	<div class="title">
+        	<div style="margin-left:10px; width:100%;; height:30px;"><div style="width:100%; height:20px; position:absolute; margin:5px auto; border-left:5px solid #900;"><p style="font-size:14px; line-height:20px; padding-left:10px; color:#666;">这个夏天有社区福利陪伴您</p></div></div>
+        </div>
+        <div class="box"><img src="images/lanren.jpg" style="width:100%; height:150px;" /></div>
+    </div>
+    
+    <!--公告-->
+    <div id="sales">
+    	<div class="title">
+        	<div style="margin-left:10px; width:100%;; height:30px;"><div style="width:100%; height:20px; position:absolute; margin:5px auto; border-left:5px solid #900;"><p style="font-size:14px; line-height:20px; padding-left:10px; color:#666;">1元秒杀</p></div></div>
+        </div>
+        <div class="box">
+        	<div style="width:50%; height:150px; float:left; background-color:#066;">
+            
+            </div>
+            <div style="width:50%; height:150px; float:left; background-color:#009">
+            
+            </div>
+        </div>
+    </div>
+    
+    <div  data-role="content" data-role="page" id="index2">
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="grid" id="butn1" class="ui-btn-active">首页</a></li>
+                <li><a href="#" data-icon="star" id="butn2">服务</a></li>
+                <li><a href="#" data-icon="gear" id="butn3">我的</a></li>
+            </ul>
+        </div>
+    </div>    
+</div>
+
+<script>
+var lanrenzhijia = {}, H$ = function(id){return document.getElementById(id)}, H$$ = function(c,p){return p.getElementsByTagName(c)}
+lanrenzhijia.slider = function(){
+	return{
+		init:function(id,options){
+			var ul = this.u = H$$('ul',H$(id))[0], li = H$$('li',ul); this.l=li.length; this.index = 0;
+			if(options.navId&&options.curClass){this.nav = H$$('li',H$(options.navId)), this.c = options.curClass;}
+			this.a=options.auto||0; this.v=options.vertical||0;H$(id).style.overflow = 'hidden';H$(id).style.position = 'relative';ul.style.position='absolute';
+			if(this.v){ul.style.top=0; this.h=options.height||li[0].offsetHeight; ul.style.height=(this.l*this.h)+'px';}
+			else{ul.style.left=0; this.w=options.width||li[0].offsetWidth; ul.style.width=(this.l*this.w)+'px';}
+			this.pos(options.index||0,this.a?1:0);
+		},
+		
+		pos:function(pos,a){
+			clearInterval(this.u.posAnim); clearInterval(this.u.auto);
+			var curPos=this.v?parseInt(this.u.style.top):parseInt(this.u.style.left),
+			correctPos=this.v?pos*this.h:pos*this.w, 
+			direction = correctPos>Math.abs(curPos)?1:-1;
+			correctPos*=-1; 
+			this.index = pos;
+			if(this.nav){for(var i=0;i<this.l;i++){this.nav[i].className = i==pos?this.c:''}}
+			this.u.posAnim = setInterval(function(){lanrenzhijia.slider.anim(correctPos,direction,a)},10);
+		},
+		
+		anim:function(des,dir,a){
+			var curPos=this.v?parseInt(this.u.style.top):parseInt(this.u.style.left);
+			if(curPos == des){
+				clearInterval(this.u.posAnim);
+				if(a||this.a){lanrenzhijia.slider.auto()}
+			}
+			else{
+				var v=curPos-Math.ceil(Math.abs(des-curPos)*.07)*dir+'px';
+				this.v?this.u.style.top=v:this.u.style.left=v;
+			}
+		},
+		
+		auto:function(){
+			this.u.auto=setInterval(function(){lanrenzhijia.slider.move(1,1)},this.a*1000)
+		},
+		
+		move:function(n,a){
+			var num=this.index+n, i=n==1?num==this.l?0:num:num<0?this.l-1:num; lanrenzhijia.slider.pos(i,a);
+		}
+	};
+}();
+</script>
+<script>
+lanrenzhijia.slider.init('slider',{	
+	auto:3,
+	vertical:1,
+	navId:'nav',
+	curClass:'nav',
+	index:0});
+</script>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.mobile-1.4.3.js"></script>
+<script type="text/javascript">
+$(document).on("pageinit","#home",function(){
+	function redirectpage() {  
+		var w=screen.width;
+		var h=screen.height;
+		if( w<480){
+		document.getElementById("index1").width = w;}
+		
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>乐哈签</title> 
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<!--进度条 -->
+		  <div style="position:fixed;background-color:#fff;width:96px;height:10px;border-radius:3px;margin-top:5px;left:20px;top:5px;">
+				<div id="loading" style="position:absolute;top:0px;left:0px;background-color:#F1C40F;width:96px;height:10px;border-radius:3px;">
+			 	</div>
+			 	<text style="position:absolute;top:0px;left:110px;color:#fff;font-size:10px;">
+			 			<b id="loadText">？</b>/<b>24</b>
+			 	</text>
+		  </div>
+   <div style="position:fixed;top:0px;right:40px;">
+  	<img src="imgs/habi.png" style="width:30px;height:30px;float:left;"/>
+  	<b id="habiNum" style="float:left;line-height:15px;font-size:10px;color:#fff;"><br/>100</b>
+  </div>
+  <!-- 主容器-->
+  <div id="slime_conteneur" style="position:fixed;top:30%;">
+  	<div id="tolk" style="position:absolute;left:40px;top:-40px;color:#fff;width:200px;font-size:10px;">你好!我的名字叫金小包!快摸摸我吧！</div> 
+  	<img id="habi" src="imgs/habi.png" style="position:absolute;left:50%;top:80px;color:#fff;width:10px;height:10px;z-index:7;"/>
+  	<li style="position:relative;list-style-type:none;z-index:0;">
+  		<img id="back" src="imgs/back.png" style="position:absolute;color:#fff;width:200px;height:200px;left:30%;"/>	
+  	</li>
+	  <!--馒头-->	
+	<div class="slime" id="slime1" style="z-index:1;">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 width="125px" height="100px" viewBox="0 0 126.75 103.25" enable-background="new 0 0 126.75 103.25" xml:space="preserve">
+		<g class="corps">
+			<path d="M126.153,71.798c0,35.275-30.128,31.452-65.403,31.452S0.411,107.073,0.411,71.798S34,0.927,63.282,0.927
+				C92,0.927,126.153,36.523,126.153,71.798z"/>
+		</g>
+		<g class="ombre">
+			<path opacity="0.1" d="M98.583,98.968c0,5.085-4.708,4.313-37.833,4.313c-29.563,0-32.769,0.771-32.769-4.313
+				c0-8.718,18.86-10.218,35.301-10.218C79.407,88.75,98.583,91.125,98.583,98.968z"/>
+		</g>
+		<g class="reflet">
+				<ellipse transform="matrix(0.5486 -0.8361 0.8361 0.5486 20.2905 77.5842)" opacity="0.5" fill="#FFFFFF" cx="82" cy="20" rx="7.75" ry="13.75"/>
+		</g>
+		<g class="yeux">
+			<g> 
+				<path d="M36.833,66.583c-3.359,0-6.083,2.724-6.083,6.083c0,3.359,2.724,6.083,6.083,6.083c3.36,0,6.083-2.724,6.083-6.083
+					C42.917,69.307,40.193,66.583,36.833,66.583z M39.5,71.25c-0.874,0-1.583-0.709-1.583-1.583c0-0.875,0.709-1.583,1.583-1.583
+					c0.875,0,1.583,0.709,1.583,1.583C41.083,70.541,40.375,71.25,39.5,71.25z"/>
+				<circle fill="#FFFFFF" cx="39.5" cy="69.667" r="1.583"/> 
+				<path d="M88.833,66.583c-3.359,0-6.083,2.724-6.083,6.083c0,3.359,2.724,6.083,6.083,6.083c3.36,0,6.083-2.724,6.083-6.083
+					C94.917,69.307,92.193,66.583,88.833,66.583z M91.5,71.25c-0.874,0-1.583-0.709-1.583-1.583c0-0.875,0.709-1.583,1.583-1.583
+					c0.875,0,1.583,0.709,1.583,1.583C93.083,70.541,92.375,71.25,91.5,71.25z"/>
+				<circle fill="#FFFFFF" cx="91.5" cy="69.667" r="1.583"/>
+			</g>
+		</g>
+		<g class="bouche">
+			<g>
+				<path fill="#A862A6">
+					<animate id="animBouche" attributeName="d" dur="3s" repeatCount="indefinite" values="M49.9,78c0,3.151,1.885,5.435,4.528,7c3.228-1.911,7.589-2.749,11.072-2.749S73.344,83.089,76.572,85
+			c2.643-1.565,4.528-3.849,4.528-7H65.584H49.9z; 
+					M49.9,73c0,3.151,1.885,10.435,4.528,12c3.228-1.911,7.589-2.749,11.072-2.749S73.344,83.089,76.572,85
+			c2.643-1.565,4.528-8.849,4.528-12H65.584H49.9z;
+			M49.9,78c0,3.151,1.885,5.435,4.528,7c3.228-1.911,7.589-2.749,11.072-2.749S73.344,83.089,76.572,85
+			c2.643-1.565,4.528-3.849,4.528-7H65.584H49.9z" />
+				</path>
+				<path fill="#E0B7E5" d="M52.678,84.25c7.116,3.558,15.028,3.558,22.144,0C68.463,80.485,59.037,80.485,52.678,84.25
+					C52.679,84.25,52.656,84.25,52.678,84.25z"/>
+			</g>
+		</g>
+		</svg>
+	</div>
+</div>
+  <script >
+  	//Colors from : http://flatuicolors.com/
+$(
+	function(){
+		loading();
+		var couleurFond='#9A36CE';
+		var numFond = Math.floor((Math.random() * 10) + 1); 
+		document.body.style.background = couleurFond;
+		var couleurSlime="#f1c40f";
+		var corpsSlime = document.getElementsByClassName("corps");
+		corpsSlime[0].style.fill = couleurSlime;
+		$("#slime1").one(
+			'click',
+			function(){
+				$('#tolk').html('<b>Blin!Blin!</b>');
+				$("#slime1").addClass("actived");
+				var couleurFond='#9A36CE';
+				var numFond = Math.floor((Math.random() * 10) + 1); 
+				document.body.style.background = couleurFond;
+				var couleurSlime="#ddd";
+				var corpsSlime = document.getElementsByClassName("corps");
+				corpsSlime[0].style.fill = couleurSlime;
+				$("#loading").animate({width:'0px'},2000);
+				$("#habi").animate({width:'100px',height:'100px',position:'fixed',top:'60px',left:'40%'},3000,
+					function(){
+						$("#habi").fadeOut(2000);
+						var num= $('#habiNum').text();
+						var addNum=parseInt(10*Math.random());
+						$('#tolk').text('恭喜，随机获取'+addNum+'哈币');
+						addNum=addNum;
+						num =parseInt(num)+addNum+'';
+						$('#habiNum').html('<br/>'+num);
+						$("#back").one(
+							'click',
+							function(){
+								talk("<i>已经都给你了-。-，明天再来吧。</i>");
+								$('#back').one(
+									'click',
+									function(){
+										talk("<b>羞羞，今天不要见你了@。@</b>");
+										$('#back').click(
+											function(){
+												talk("<b>不要再调戏人家啦！明天再来啦！</b>");
+											}
+										);
+									}
+								);
+							}
+						);
+					});
+			}
+		);
+	}
+);
+function talk(text){
+	$('#tolk').html(text);
+	$('#tolk').show();
+	$('#tolk').fadeOut(3000);
+}
+function loading(){
+	/**
+	获取当前日期，获取上次签到日期。
+	若签到日期在当前日期之前——》【1】
+	*【1】获取当前时间（小时 myHours)，小于9，则进度条长度为（9-myHours+15）*4；大于9，则进度条长度为24*4
+	若签到时间为今天---》【2】
+	【2】获取当前时间（小时 myHours），必定大于9，则进度条长度为（myHours-9）*4;
+	*/
+	setTime();
+	// setTimeout("setTime()",1000);
+	// setTime();
+}
+var checkDay="";
+function getCheckDay(Cid){
+		//根据用户Id获取用户信息
+}
+function setTime(){
+       var mydate=new Date();
+       var thisDay= mydate.getDate();
+		var myHours = mydate.getHours();
+		console.log('aaa'+myHours);
+		//jugeDate,若今天已经签过,那么就为false
+		var jugeDate=false;
+		//myHours=11;
+		if(jugeDate){
+			if(myHours<9){
+			  myHours=9-myHours+15;
+			}else{
+			  myHours=24;
+			}
+		}else{
+			myHours=myHours-9;
+		}
+		var loadbar=myHours*4;
+		console.log(myHours);
+		$("#loading").css('width',loadbar+'px');
+		$("#loadText").html(''+myHours);
+    	setTimeout("setTime()",3000000);
+    }
+</script>
+</body>
+</html>

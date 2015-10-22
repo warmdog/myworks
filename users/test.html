@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据测试页面</title>
+	<meta charset="UTF-8"> 
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<input id="text01" type="text" />
+
+	<input onclick="test()" type="button" value="测试" />
+	<p><b>所需接口：</b></p>
+	<p>论坛引导对应的标题和内容</p>
+	<p>用户乐哈币数</p>
+	<p>用户头像</p>
+	<p>用户名</p>
+	<p>用户ID</p>
+	<p>每个商品对应的用户竞拍的结果【取前三】</p>
+	<p>商品信息【商品名、商品信息】</p>
+	<script type="text/javascript">
+		function test(){
+			var text01=$("#text01").val();
+			alert(text01);
+			$.ajax({
+				url:'content.php',
+				type:'post',
+				data:'id='+text01,
+				success:function(ee){
+                            //alert("加入成功!");
+                            alert(ee);
+                            console.log(ee);
+                           
+                        
+                        },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        	alert(XMLHttpRequest.status);
+                        	alert(XMLHttpRequest.readyState);
+                        	alert(textStatus);
+                        }
+                    });
+		}
+	</script>
+</body>
+</html>
