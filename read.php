@@ -1,5 +1,6 @@
 <?php  
 echo "so easy";
-~~
-ffffffffffffffffffffff
+
+echo "ffffffffffffffffffffff";
+
 ?>
