@@ -1,0 +1,67 @@
+.SQJ-alert-1{
+	background-color:#fadeda;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	z-index:4;
+	display: none;
+	overflow:auto;
+}
+.closeIcon{
+	font-size: 35px;
+	position: absolute;
+	width:60px;
+	height:60px;
+	line-height: 60px;
+	right:20px;
+	top:60px;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 100px;
+	color:#DD650F;
+}
+.SQJ-alert-1 p{
+	text-align:center;
+	margin: 5px 0px;
+}
+.SQJ-alert-1 button{
+	width:200px;
+
+}
+.overFlow{
+	background-color: rgba(0,0,0,0.5);
+	height: 1000px;
+	width:1000px;
+	position: fixed;
+	left: 0px;
+	top:0px;
+	z-index: 5;
+}
+.SQJ-alert-text{
+	position: fixed;
+	display: none;
+	background-color: #fff;
+	width:100%;
+	left: 0px;
+	bottom:0px; 
+	height:100%;
+	z-index: 10;
+	font-size: 20px;
+	background-color:#DD650F;
+	color:#fff;
+}
+.SQJ-alert-text p{
+	text-align: center;
+	margin-top:40px;
+}
+.buttonConfirm{
+	width: 80%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin:40px 10%;
+	background-color: #fff;
+	color:#DD650F; 
+}

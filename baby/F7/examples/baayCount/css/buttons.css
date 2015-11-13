@@ -1,0 +1,13 @@
+.SQJ-button-1{
+  border: none;
+  background-color: #FF7F50;
+  color: #fff;
+  width:20%;
+  height: 40px;
+  line-height: 40px;
+  border-radius:10px;
+  text-align: center;
+}
+.SQJ-button-link{
+	color:#FF7F50;
+}

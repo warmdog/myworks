@@ -1,0 +1,13 @@
+.SQJ-frame-ring-40px{
+	width: 40px;
+	height:40px;
+	background-color: #ccc;
+	overflow: hidden;
+	border-radius: 100px;
+	display: inline-block;
+}
+.SQJ-frame-ring-40px img{
+	width: 40px;
+	height:40px;
+	border-radius: 100px;
+}

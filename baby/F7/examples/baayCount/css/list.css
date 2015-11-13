@@ -1,0 +1,160 @@
+      /*
+        list01
+      */
+      .baby{
+        margin-top: 10px;
+        background-color:rgba(200,200,200,0.3);
+        height:80px;
+        border-radius: 20px;
+      }
+      .imgBox{
+        width:108px;
+        height:100px;
+        float:left;
+        margin:10px 20px 10px 70px;
+      }
+      .imgBox img{
+        width:108px;
+        height:108px;
+        overflow: hidden;
+        border-radius:200px;
+      }
+      .detail{
+        width:80px;
+        height:200px;
+        float:left;
+      }
+      .detail text{
+        display: inline-block;
+        height:200px;
+        line-height: 200px;
+        color:#f00;
+        float:left;
+        white-space:nowrap;
+        overflow: hidden;
+      }
+    /*
+      list02
+    */
+    .babyOther{
+        margin-top: 10px;
+        background-color: #D8BCB8;
+        height:120px;
+        border-radius: 20px;
+    }
+    .imgBoxOther{
+      width:100px;
+      height:100px;
+      float:left;
+      margin: 10px;
+    }
+    .imgBoxOther img{
+      width:100px;
+      height:100px;
+      border-radius:100px;
+    }
+    .detailOther{
+      width:80px;
+      height:200px;
+      float:left;
+    }
+    .nameOther{
+      line-height: 30px;
+      margin-left:10px;
+      color: #fff;
+    }
+    .ticketsOther{
+      line-height: 30px;
+      margin-left:10px;
+      color: #fff;
+    }
+    .numOther{
+      line-height: 30px;
+      margin-left:10px;
+      color: #fff;
+    }
+    /*
+      list03
+    */
+    .halfList{
+      width:50%;
+      float: left;
+      border: none;
+      margin:5px 0px 0px 0px;
+    }
+    .halfList-inner{
+      width:90%;
+      height: 100%;
+      margin: 0 auto;
+    }
+    .halfList-inner img{
+      width:60%;
+      border: none;
+      margin:5px 20% 0 20%;
+      border-radius: 100px;
+    }
+    .halfList-inner text{
+      display: inline-block;
+      border: none;
+      margin: 0px;
+      color: #222;
+      text-align: center;
+    }
+    /*
+        list04
+      */
+    .SQJ-list-4{
+        height:40px;
+        line-height: 40px;
+        padding: 10px 0px;
+        margin-bottom: 10px;
+    }
+    .SQJ-list-4 img{
+      width:40px;
+      height:40px;
+      float: left;
+      display: inline-block;
+    }
+    .SQJ-list-4 text{
+      color: #999;
+      float: left;
+      width: 20%;
+      margin-left:10px;
+      display: inline-block;
+    }
+    /*
+        list05
+      */
+    .SQJ-halfList-5{
+      width:50%;
+      float: left;
+      border: none;
+      margin:5px 0px 0px 0px;
+    }
+    .SQJ-halfList-5-inner{
+      width:96%;
+      height:130px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .SQJ-halfList-5-inner img{
+      width: 100%;  
+      z-index: 1;
+    }
+    .SQJ-halfList-5-inner text{
+      position: absolute;
+      color: #fff;
+      z-index: 2;
+      background-color:rgba(0,0,0,0.4);
+      display: inline-block;
+      border-radius: 10px;
+      padding:0px 2px;
+      line-height: 30px;
+    }
+    /*
+    */
+    .SQJ-hideList{
+      display: none;
+    }
